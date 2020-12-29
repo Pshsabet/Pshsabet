@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>posts</title>
+    <style>
+        .image {
+            width: 250px;
+            height: 250px;
+        }
+    </style>
+</head>
+<body>
+    <center>
+    {% for post in post %}
+        <img src="{{post.image.url}}" alt="{{post.title}}" class="image">
+        <h1><a href="posts/{{post.slug}}">{{post.title}}</a></h1>
+        <small>published in: {{post.publish}}</small>
+        <br>
+        <small>updated in: {{post.updated}}</small>
+        <p>{{post.description}}</p>
+    {% endfor %}
+    </center>
+
+</body>
+</html>
